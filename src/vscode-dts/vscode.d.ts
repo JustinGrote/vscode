@@ -16464,7 +16464,8 @@ declare module 'vscode' {
 		replace(items: readonly TestItem[]): void;
 
 		/**
-		 * Iterate over each entry in this collection.
+		 * Iterate over each entry in this collection. This only iterates the root items in the collection,
+		 * children are not iterated.
 		 *
 		 * @param callback Function to execute for each entry.
 		 * @param thisArg The `this` context used when invoking the handler function.
@@ -16485,7 +16486,8 @@ declare module 'vscode' {
 		delete(itemId: string): void;
 
 		/**
-		 * Efficiently gets a test item by ID, if it exists, in the children.
+		 * Efficiently gets a test item by ID, if it exists in the collection. This only searches the immediate
+		 * children in the collection and is not a recursive search.
 		 * @param itemId Item ID to get.
 		 * @returns The found item or undefined if it does not exist.
 		 */
